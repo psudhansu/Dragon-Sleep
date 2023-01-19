@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+    <style>
+      .one{
+            display:flex;
+            justify-content: space-between;
+            padding-left: 70px;
+            padding-right: 70px;
+            height:40px;
+            background-color: blue;
+            
+        }
+        #first{
+            width:16%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        #sec{
+            width:26%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            
+        }
+        .one div a{
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            font-weight: 800;
+        }
+        
+        .search{
+            height:50px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(249, 250, 251);
+            position: sticky;
+            left:0;
+            top:0;
+            
+        }
+        .search>input{
+            width:60%;
+            height:30px;
+            text-align: center;
+            border-radius: 20px;
+        }
+        .search>div{
+            width:10%;
+            display:flex;
+            justify-content: space-around;
+            font-size: 20px;
+        }
+        .search>div a{
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 900;
+            
+        }
+        .search img{
+            width:90px;
+            height:45px;
+            margin-left: 20px;
+        }
+        .allA{
+            height:50px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 20px;
+        
+        }
+        .allA a{
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 200;
+            color:black;
+        }
+        .allA a:hover{
+            color:blue;
+            text-decoration: underline;
+        }
+      #product-container{
+        width:90%;
+        margin:auto;
+        display:grid;
+        grid-template-columns: repeat(6,1fr);
+        gap:10px;
+      }
+      #product-container img{
+     width:100%
+      }
+
+      #product-container>div{
+      
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+      }
+      #product-container>div>button{
+        display:block;
+        margin: auto;
+        color:white;
+        background-color: aqua;
+        border:none;
+        border-radius: 4px;
+        font-size: 20px;
+      }
+      #product-container button:hover{
+         color:red
+      }
+      #down{
+        margin-top: 10px;
+      }
+
+    </style>
+</head>
+<body>
+  
+  <div class="one">
+    <div id="first">
+        <a href="">logo</a>
+        <a href="">buybaby</a>
+        <a href="">harmon</a>
+    </div>
+    <div id="sec">
+        <a href="">sameday delivery</a>
+        <a href="">Store pickup</a>
+    </div>
+</div>
+    <div class="search">
+        <div>
+            <a href="#" id="down"><i class="fa-solid fa-bars"></i></a>
+            <a href="index.html">
+              <img src="https://tse1.mm.bing.net/th?id=OIP.m04rk_94THf3jXHc2yvk7QHaCj&pid=Api&P=0" alt="">
+            </a>
+        </div>
+        <input type="text" placeholder="search here">
+        <div>
+            <a href="signin.html">sign in  </a>
+            <a href="cart.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
+        </div>
+        
+    </div>
+    <div class="allA">
+        <a href="product.html">bedding</a>
+        <a href="">bath</a>
+        <a href="">kitchen</a>
+        <a href="">dining</a>
+        <a href="">storage&cleaning</a>
+        <a href="">homedocor</a>
+        <a href="">certain&window</a>
+        <a href="">furniter</a>
+        <a href="">health&beauty</a>
+        <a href="">outdoor</a>
+        <a href="">luggage pet&more</a>
+        <a href="">gifts</a>
+        <a href="">baby&kids</a>
+        <a href="">shop by brand</a>
+        <a href="">college</a>
+    </div>
+    <div id="product-container">
+
+    </div>
+</body>
+</html>
+<script>
+        fetchdata()
+    async function fetchdata(){
+      try{
+        let res = await fetch("https://63c7c284e52516043f43da37.mockapi.io/product");
+        let data = await res.json()
+        
+        Display(data)
+        console.log(data)
+        
+      }catch(err){
+        console.log(err);
+      }
+    }
+    
+    let container = document.getElementById("product-container");
+    let cartA = JSON.parse(localStorage.getItem("cart"))||[];
+    function Display(data){
+      container.innerHTML="";
+
+      data.forEach((element)=>{
+        let card = document.createElement("div");
+          
+        let avatar =document.createElement("img");
+        let name =document.createElement("h3");
+        let category =document.createElement("h4");
+        let description=document.createElement("p")
+        let createAt =document.createElement("p");
+        let id1 = document.createElement("p");
+        let price =document.createElement("h4");
+        let add_to_cart =document.createElement("button");
+
+        avatar.setAttribute("src",element.avatar);
+        name.innerText=element.name;
+        category.innerText=element.category;
+        description.innerText=element.description;
+        createAt.innerText=element.createdAt;
+        id1.innerText=element.id;
+        price.innerText=element.price;
+        add_to_cart.innerText="Add to Cart";
+        
+        add_to_cart.addEventListener("click",()=>{
+         if(checkduplicate(element)){
+          alert("Product already in the cart")
+         }else{
+          cartA.push({...element,quantity:1});
+          localStorage.setItem("cart",JSON.stringify(cartA))
+         }
+        });
+
+        
+        card.append(avatar,category,createAt,description,id1,name,price,add_to_cart)
+        container.append(card);
+      });
+
+    
+    }
+
+    function checkduplicate(element){
+      for(let i=0;i<cartA.length;i++){
+        if(cartA[i].category === element.category){
+          return true;
+        }
+      }
+      return false;
+    }
+
+</script>
