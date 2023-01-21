@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cw-1</title>
+    <title>Bed Bath and Beyond</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <style>
         span{
             color:red;
@@ -257,15 +258,7 @@
         .top p{
             text-align: center;
         }
-        .just-container{
-            width:90%;
-            margin:auto;
-            display:grid;
-            grid-template-columns: repeat(4,1fr);
-        }
-        .just-container img{
-         width:100%;
-        }
+
       @media all and (max-width:570px){
         .winter{
             margin:auto;
@@ -284,6 +277,13 @@
       }
       #down{
         margin-top: 10px;
+      }
+      .swiper_wrapper{
+         width:90%;
+         margin: auto;
+      }
+      .pro img{
+        width:100%
       }
         
     </style>
@@ -540,27 +540,31 @@
             </a></div>
         </div>
         <h1>just for you</h1>
-        <div class="just-container">
-            <div class="pro">
-                <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2022-02-25-14-50_881334012804_imageset?$713$&wid=713&hei=713" alt="">
-                <div class="des">
-                    <h4>$24.49</h4>
-                    <p></p>
-                    <h5>Dunkin' Donuts Original Blend</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <span>3758</span>
+        <section class="slider_container">
+            <div class="container">
+                <div class="swiper card_slider">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">sl-1 </div>
+                        <div class="swiper-slide">sl-2 </div>
+                        <div class="swiper-slide">sl-3 </div>
+                        <div class="swiper-slide">sl-4 </div>
+                        <div class="swiper-slide">sl-5 </div>
+                        <div class="swiper-slide">sl-5 </div>
                     </div>
                 </div>
             </div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+        </section>
 
+        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+        <script type="text/javascript">
+      var swiper = new Swiper(".card_slider", {
+      slidesPerView: 2,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
+        </script>
 </body>
 </html>
