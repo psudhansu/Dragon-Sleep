@@ -17,11 +17,15 @@
             
         }
         #first{
-            width:16%;
+            width:26%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding-right: 15px;
             
+        }
+        #first img{
+        width:60px;
         }
         #sec{
             width:26%;
@@ -70,6 +74,47 @@
             width:90px;
             height:45px;
             margin-left: 20px;
+        }
+        .drop{
+            
+            text-align: center;
+        }
+        .drop ul{
+            display:inline-flex;
+            list-style: none;
+        }
+        .drop ul li{
+            margin:15px;
+            padding: 10px;
+        }
+        .sub_menu{
+            display:none;
+        }
+        .drop ul li:hover .sub_menu{
+            display:block;
+            position: absolute;
+            border-radius: 5px;
+            background-color: rgb(0, 64, 255);
+            margin-top: 5px;
+            margin-left: 5px;
+        }
+        .drop ul li:hover .sub_menu ul{
+            display:block;
+            margin:5px;
+        }
+        .drop ul li:hover .sub_menu ul li{
+            width:150px;
+            padding: 10px;
+            border-bottom: 1px dotted black;
+            text-align: left;
+            background: transparent;
+            border-radius: 0;
+        }
+        .drop ul li:hover .sub_menu ul li a:hover{
+            color:rgb(249, 66, 38)
+        }
+        .drop ul li:hover .sub_menu ul li a{
+            color:aliceblue;
         }
         .allA{
             height:50px;
@@ -128,7 +173,9 @@
   
   <div class="one">
     <div id="first">
-        <a href="">logo</a>
+        <a href="">
+          <img src="https://tse1.mm.bing.net/th?id=OIP.m04rk_94THf3jXHc2yvk7QHaCj&pid=Api&P=0" alt="">
+        </a>
         <a href="">buybaby</a>
         <a href="">harmon</a>
     </div>
@@ -145,10 +192,21 @@
             </a>
         </div>
         <input type="text" placeholder="search here">
-        <div>
-            <a href="account.html">sign in  </a>
-            <a href="cart.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a>
-        </div>
+        <div class="drop">
+          <ul>
+              <li><a href="">signIn</a>
+                <div class="sub_menu">
+                  <ul>
+                      <li><a href="register.html">Register</a></li>
+                      <li><a href="sign in.html">Login</a></li>
+                  </ul>
+                </div>
+              </li>
+              <li><a href="cart.html"><i class="fa-sharp fa-solid fa-cart-shopping"></i></a></li>
+          </ul>
+
+      </div>
+
         
     </div>
     <div class="allA">
