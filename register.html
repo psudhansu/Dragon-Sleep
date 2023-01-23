@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign up Page</title>
+  <style>
+      /* Write all necessery css here  */
+      .back{
+            background-color: rgb(58, 58, 211);
+        }
+        .back a{
+            color:white;
+            margin-left: 40px;
+            font-size: 30px;
+            text-decoration: none;
+        }
+        body{
+      margin:0;
+      padding:0;
+      font-family: sans-serif;
+      background-image:url("https://tse2.mm.bing.net/th?id=OIP.FMdsnWfsfzuSU3qI-sGE1wHaEK&pid=Api&P=0");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+    .box{
+      width:300px;
+      padding:30px;
+      position:absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      text-align: center;
+    }
+    .box h1{
+      color:white;
+      text-transform: uppercase;
+      font-weight: 700;
+
+    }
+    .box input[type="email"],.box input[type="password"],.box input[type="text"]{
+      border:0;
+      background: none;
+      display:block;
+      margin:20px auto;
+      text-align: center;
+      border:3px solid rgb(221, 221, 233);
+      padding:14px 10px;
+      width:220px;
+      outline:none;
+      color:white;
+      border-radius: 20px;
+      transition:0.25px;
+
+    }
+    .box input[type="email"]:focus,.box input[type="password"]:focus,.box input[type="text"]:focus{
+      width:270px;
+      border-color: yellow;
+    }
+    .box input[type="submit"]{
+      border:0;
+      background: none;
+      display:block;
+      margin:20px auto;
+      text-align: center;
+      border:3px solid rgb(204, 204, 52);
+      padding:14px 10px;
+      outline:none;
+      color:white;
+      border-radius: 20px;
+      transition:0.25px;
+    }
+    .box input[type="submit"]:hover{
+      color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="back">
+    <a href="index.html">Back</a>
+</div>
+
+    <form class="box">
+      <h1>register here</h1>
+      <input type="text" id="name" placeholder="enter name..">
+      <input type="email" id="email" placeholder="enter email">
+      <input type="password"  id="password" placeholder="enter password">
+      <input type="submit" value="Submit" />
+    </form>
+</body>
+<script>
+  let form =document.querySelector("form");
+  let nameInp = document.getElementById("name");
+  let mailInp = document.getElementById("email");
+  let passInp = document.getElementById("password");
+
+  form.addEventListener("submit", getdata)
+  function getdata(){
+    let storedata=[];
+    let data={
+      name: nameInp.value,
+      email: mailInp.value,
+      password: passInp.value,
+    }
+    storedata.push(data);
+    localStorage.setItem("register-data", JSON.stringify(storedata));
+    window.location.href = "./account.html"
+  }
+</script>
+
+</html>

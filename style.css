@@ -1,0 +1,401 @@
+span{
+    color:red;
+}
+
+.one{
+    display:flex;
+    justify-content: space-between;
+    padding-left: 70px;
+    padding-right: 70px;
+    height:40px;
+    background-color: blue;
+    
+}
+#first{
+    width:26%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15px;
+    
+}
+#first img{
+    width:60px;
+}
+#sec{
+    width:26%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.one div a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.search{
+    height:70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(249, 250, 251);
+    position: sticky;
+    left:0;
+    top:0;
+    
+}
+.search>input{
+    width:60%;
+    height:30px;
+    text-align: center;
+    border-radius: 20px;
+}
+.search>div{
+    width:10%;
+    display:flex;
+    justify-content: space-around;
+    font-size: 20px;
+}
+.search>div a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 900;
+    
+}
+.search img{
+    width:90px;
+    height:45px;
+    margin-left: 20px;
+}
+.drop{
+    
+    text-align: center;
+}
+.drop ul{
+    display:inline-flex;
+    list-style: none;
+}
+.drop ul li{
+    margin:15px;
+    padding: 10px;
+}
+.sub_menu{
+    display:none;
+}
+.drop ul li:hover .sub_menu{
+    display:block;
+    position: absolute;
+    border-radius: 5px;
+    background-color: rgb(0, 64, 255);
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.drop ul li:hover .sub_menu ul{
+    display:block;
+    margin:5px;
+}
+.drop ul li:hover .sub_menu ul li{
+    width:150px;
+    padding: 10px;
+    border-bottom: 1px dotted black;
+    text-align: left;
+    background: transparent;
+    border-radius: 0;
+}
+.drop ul li:hover .sub_menu ul li a:hover{
+    color:rgb(249, 66, 38)
+}
+.drop ul li:hover .sub_menu ul li a{
+    color:aliceblue;
+}
+
+.allA{
+    height:50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 20px;
+
+}
+.allA a{
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 200;
+    color:black;
+}
+.allA a:hover{
+    color:blue;
+    text-decoration: underline;
+}
+
+.image1{
+    width:90%;
+    margin:auto;
+    
+}
+.image1>a>img{
+    width:100%;
+    
+}
+.select{
+    width:90%;
+    margin:auto;
+    
+}
+.select>p{
+    text-align: center;
+}
+.select>div{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:15px;
+    text-align: center;
+}
+.select>div a{
+text-decoration: none;
+font-size: 20px;
+font-weight: 900;
+}
+.select img{
+    width:100%;
+}
+.select>div>div:hover{
+    text-decoration: underline;
+}
+h1{
+    text-align: center;
+    font-size: 50px;
+    color:rgb(16, 16, 101)
+}
+.winter{
+    margin:auto;
+    width:90%;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:10px;
+}
+.winter img{
+    width:100%;
+}
+.winter a{
+text-decoration: none;
+}
+.winter a:hover{
+    text-decoration: underline;
+}
+.winter p{
+    color:black;
+}
+.red{
+    width:90%;
+    margin:auto;
+}
+.red img{
+    width:100%;
+}
+.healthy{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:10px;
+}
+.healthy a{
+    text-decoration: none;
+}
+.healthy a:hover{
+    text-decoration:underline;
+}
+.healthy h4{
+    padding: 10px;
+}
+.healthy img{
+    width:100%;
+    height:300px;
+}
+.coffee{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:16px;
+}
+.coffee a{
+    text-decoration: none;
+}
+.coffee img{
+    width:100%;
+}
+.coffee h4{
+    padding-left: 15px;
+}
+.valen{
+    width:90%;
+    margin:auto;
+}
+.tidy{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:15px;
+}
+.tidy img{
+    width:100%;
+}
+.tidy a{
+    text-decoration: none;
+}
+.tidy a:hover{
+    text-decoration: underline;
+}
+.deli{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:15px;
+}
+.deli a{
+    text-decoration: none;
+    color:black;
+}
+.deli img{
+    width:100%;
+}
+.deli p{
+    padding-left: 15px;
+}
+.out{
+    width:90%;
+    margin:auto;
+}
+.top{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns: repeat(6,1fr);
+    gap:15px;
+}
+.top img{
+    width:100%;
+}
+.top a:hover{
+    color:blue;
+}
+
+.top a{
+    text-decoration: none;
+    color:black;
+}
+.top p{
+    text-align: center;
+}
+.just-container{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-bottom: 50px;
+    gap:15px;
+    
+}
+.just-container img{
+ width:100%;
+}
+.pro{
+    box-shadow: 0px 2px 2px black;
+}
+.des{
+    margin-left: 20px;
+}
+#down{
+margin-top: 10px;
+}
+.swiper_wrapper{
+ width:90%;
+ margin: auto;
+}
+.pro img{
+width:100%
+}
+.para{
+width:90%;
+margin:auto;
+}
+.last{
+width:90%;
+margin:auto;
+display:grid;
+grid-template-columns: repeat(4,1fr);
+gap:15px;
+}
+.last a{
+text-decoration: none;
+}
+.last>div>a{
+color:black;
+display: block;
+padding: 10px;
+}
+.last a:hover{
+    text-decoration:underline;
+}
+.last>div>div>a{
+    padding: 15px;
+}
+#get{
+    height:30px;
+    background-color: rgb(72, 72, 245);
+    color:white;
+    text-align: center;
+    font-size: 20px;
+}
+#app img{
+    width:150px;
+}
+
+@media all and (max-width:670px){
+.winter{
+    margin:auto;
+    width:90%;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:10px;
+}
+.healthy{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:10px;
+}
+.top{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:15px;
+}
+.just-container{
+    width:90%;
+    margin:auto;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-bottom: 50px;
+    gap:15px;
+    
+}
+}
+@media all and (max-width:870px){
+.last{
+width:90%;
+margin:auto;
+display:grid;
+grid-template-columns: repeat(1,1fr);
+gap:15px;
+}
+}
